@@ -1,0 +1,22 @@
+package perimeter;
+
+public class Shape {
+
+    private int perimeter;
+
+    public Shape(String type, int parameter) {
+        if (type == "circle") {
+            this.perimeter = (int) (parameter * Math.PI);
+        } else if (type == "square") {
+            this.perimeter = parameter * 4;
+        }
+    }
+
+    public Shape(String type, int side1, int side2, int side3) {
+        if (type == "triangle" && (side1 + side2) > side3 &&
+                (side1 + side3) > side2 && (side2 + side3) > side1 &&
+                side1 > 0 && side2 > 0 && side3 > 0) {
+            this.perimeter = side1 + side2 + side3;
+        }
+    }
+}
